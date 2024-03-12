@@ -1,18 +1,26 @@
-// src/pages/TestPage.js
-import React from 'react';
-import PrettyButton from '../components/PrettyButton';
+import React, { useState } from 'react';
+import Quiz from '../components/Quiz';
+import Choice from '../components/Choice';
+import { useNavigate } from 'react-router-dom';
 
-const TestPage = () => {
-   const handleTestButtonClick = () => {
-      alert('테스트 페이지 버튼 클릭!');
-      // 여기에 테스트 시작 로직을 추가할 수 있습니다.
-   };
+const ResultPage = () => {
+ const navigate = useNavigate();
 
-   return (
-      <div>
-         <PrettyButton buttonText="테스트중" onClick={handleTestButtonClick} />
-      </div>
-   );
+ // 선택된 보기를 콘솔에 출력하는 함수
+ const handleChoiceSelect = (choice) => {
+    console.log('선택된 보기:', choice);
+ };
+
+ const goToMainPage = () => {
+   navigate('/'); 
+ }; // router vs navigate
+
+ return (
+  <div>
+    <Quiz />
+    <button onClick={goToMainPage}>메인 페이지로 돌아가기</button>
+  </div>
+ );
 };
 
-export default TestPage;
+export default ResultPage;
