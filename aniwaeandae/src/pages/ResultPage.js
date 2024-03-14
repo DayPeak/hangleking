@@ -21,7 +21,7 @@ const ResultPage = ({ score, testId }) => {
  };
 
  return (
-    <MainScreen>
+    <MainScreen> {}
       <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center', marginBottom: '20px' }}>
         <Logo />
         <ShareTestLink onClick={handleShare} />
