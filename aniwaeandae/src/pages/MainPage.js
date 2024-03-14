@@ -1,22 +1,24 @@
 // MainPage.js
 import React from 'react';
 import PrettyButton from '../components/PrettyButton';
+import MainScreen from '../components/MainScreen';
+import { useNavigate } from 'react-router-dom'; // useNavigate 훅 추가
 
 const MainPage = () => {
- const handleMainButtonClick = () => {
-    alert('메인 페이지 버튼 클릭!');
- };
+   const navigate = useNavigate(); // useNavigate 훅을 사용하여 navigate 함수 생성
 
- return (
-    <div>
-      <PrettyButton buttonText="메인 페이지 시작" onClick={handleMainButtonClick} />
-      <h1>않이웨앉되</h1>
-      <h2>않이웨앉되</h2>
-    </div>
- );
+   const handleMainButtonClick = () => {
+      navigate('/test'); // '/test' 경로로 이동
+   };
+
+   return (
+      <MainScreen> {/* MainScreen 컴포넌트를 사용하여 요소들을 감싸기 */}
+         <div>
+            <h1>않이웨앉되</h1>
+            <PrettyButton buttonText="테스트 시작" onClick={handleMainButtonClick} />
+         </div>
+      </MainScreen>
+   );
 };
 
 export default MainPage;
-
-
-
