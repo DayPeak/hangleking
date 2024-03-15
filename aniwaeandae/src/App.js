@@ -12,7 +12,7 @@ const App = () => {
         <Route path="/" element={<MainPage />} /> {/* 메인 페이지로 라우팅 */}
         <Route path="/test" element={<TestPage />} /> {/* 테스트 페이지 라우팅 */}
         <Route path="/result" element={<ResultPage />} /> {/*결과 페이지 라우팅 */}
-      </Routes>
+      </Routes> 
     </Router>
  );
 };

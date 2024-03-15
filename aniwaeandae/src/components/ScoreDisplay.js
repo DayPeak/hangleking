@@ -4,7 +4,7 @@ import React from 'react';
 const ScoreDisplay = ({ score }) => {
  return (
     <div>
-      <h2>Your Score: {score}</h2>
+      <h2>{score}점 이네요!</h2>
     </div>
  );
 };
