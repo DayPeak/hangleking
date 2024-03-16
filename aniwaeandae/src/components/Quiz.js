@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from './Quiz.module.css';
 
 const quizData = [
   // 퀴즈 데이터 예시
@@ -56,11 +57,11 @@ const Quiz = ({ onResult }) => {
   }
 
   return (
-    <div>
+    <div className={styles.quizContainer}>
       <h2>{currentQuiz + 1}/{randomQuiz.length}</h2>
       <h2>{randomQuiz[currentQuiz].question}</h2>
       {randomQuiz[currentQuiz].choices.map((choice, index) => (
-        <button key={index} onClick={() => handleAnswer(index)}>
+        <button className={styles.quizButton} key={index} onClick={() => handleAnswer(index)}>
           {choice}
         </button>
       ))}

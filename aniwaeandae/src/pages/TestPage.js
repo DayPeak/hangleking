@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Quiz from '../components/Quiz';
 import { useNavigate } from 'react-router-dom';
 import MainScreen from '../components/MainScreen';
+import styles from './TestPage.module.css';
 
 const TestPage = () => {
  const navigate = useNavigate();
@@ -15,12 +16,12 @@ const TestPage = () => {
  };
 
  return (
-    <MainScreen>
-      <div>
-        <Quiz onResult={calculateScore} />
-      </div>
-    </MainScreen>
- );
+  <MainScreen>
+    <div className={styles.testPageContainer}>
+      <Quiz onResult={calculateScore} />
+    </div>
+  </MainScreen>
+);
 };
 
 export default TestPage;
