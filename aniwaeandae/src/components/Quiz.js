@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Quiz.module.css';
+import QuizList from './QuizList.js';
 
 const quizData = [
   // 퀴즈 데이터 예시
@@ -8,27 +9,6 @@ const quizData = [
     choices: ['a', 'b', 'c', 'd', 'e'],
     answer: 0
   },
-  {
-    question: 'quiz2',
-    choices: ['a', 'b', 'c', 'd'],
-    answer: 1
-  }
-  ,
-  {
-    question: 'quiz3',
-    choices: ['a', 'b', 'c'],
-    answer: 2
-  },
-  {
-    question: 'quiz4',
-    choices: ['a', 'b', 'c', 'd'],
-    answer: 3
-  },
-  {
-    question: 'quiz5',
-    choices: ['a', 'b'],
-    answer: 0
-  }
 ];
 
 const Quiz = ({ onResult }) => {
@@ -38,7 +18,8 @@ const Quiz = ({ onResult }) => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
 
   useEffect(() => {
-    const shuffledData = quizData.sort(() => Math.random() - 0.5);
+    const shuffledDataO = QuizList.sort(() => Math.random() - 0.5);
+    const shuffledData = shuffledDataO.slice(0, 10);
     setRandomQuiz(shuffledData);
   }, []);
 
@@ -51,14 +32,14 @@ const Quiz = ({ onResult }) => {
     setCurrentQuiz(currentQuiz + 1);
   };
 
-  if (currentQuiz >= randomQuiz.length) {
+  if (currentQuiz >= (randomQuiz.length)) {
     onResult(selectedAnswers);
     return null; // 직접 컴포넌트 반환 제거
   }
 
   return (
     <div className={styles.quizContainer}>
-      <h2>{currentQuiz + 1}/{randomQuiz.length}</h2>
+      <h2>{currentQuiz + 1}/{10}</h2>
       <h2>{randomQuiz[currentQuiz].question}</h2>
       {randomQuiz[currentQuiz].choices.map((choice, index) => (
         <button className={styles.quizButton} key={index} onClick={() => handleAnswer(index)}>
