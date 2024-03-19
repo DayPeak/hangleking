@@ -7,10 +7,12 @@ import ShareResultButton from '../components/ShareResultButton';
 import Logo from '../components/Logo';
 import ShareTestLink from '../components/ShareTestLink';
 import PrettyButton from '../components/PrettyButton';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const ResultPage = ({ score, testResult }) => {
+const ResultPage = () => {
  const navigate = useNavigate();
+ const location = useLocation();
+ const { score, testResult } = location.state || {}; // 상태에서 score와 testResult 추출
 
  const handleShare = () => {
     alert('공유 기능이 구현되지 않았습니다.');

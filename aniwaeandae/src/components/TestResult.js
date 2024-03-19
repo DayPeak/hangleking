@@ -7,9 +7,8 @@ const TestResult = ({ testResult }) => {
         <div>
           {testResult.map((item, index) => (
             <div key={index}>
-              <p>Question: {item.question}</p>
-              <p>Selected Answer: {item.answer}</p>
-              <p>Correct Answer: {item.isCorrect ? 'Yes' : 'No'}</p>
+              <p>{index+1}. {item.question}</p>
+              <p>내가 고른 답 :{item.answer} {item.isCorrect ? '정답!' : '오답!'}</p>
             </div>
           ))}
         </div>

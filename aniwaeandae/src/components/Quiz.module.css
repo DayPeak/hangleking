@@ -1,24 +1,31 @@
-/* Quiz.module.css */
+/* 답변 버튼들을 묶는 부모 요소에 적용할 CSS */
+.answerButtons {
+    display: flex;
+    flex-wrap: wrap; /* 버튼들이 여러 줄로 래핑되도록 설정 */
+    justify-content: center; /* 버튼들을 수평 방향으로 가운데 정렬 */
+    align-items: flex-start; /* 버튼들이 수직 방향으로 윗줄과 아랫줄이 붙지 않도록 설정 */
+    gap: 10px; /* 버튼들 사이의 간격 */
+}
+
 .quizButton {
-    background-color: #0026ff;
+    background-color: #0051ff;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
     outline: none;
     border: none;
     text-transform: uppercase;
-    margin: 10px 0;
+    margin: 5px; /* 버튼 사이의 여백 */
     cursor: pointer;
     box-shadow: 0px 2px 2px lightgray;
     transition: background-color 250ms ease;
-   }
-   
-   .quizButton:hover {
-    background-color: #0051ff;
-   }
-   
-   .quizButton:disabled {
+}
+
+.quizButton:hover {
+    background-color: #2563e9;
+}
+
+.quizButton:disabled {
     cursor: default;
     opacity: 0.7;
-   }
-   
+}
