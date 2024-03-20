@@ -1,15 +1,9 @@
+// Quiz.js
 import React, { useState, useEffect } from 'react';
 import styles from './Quiz.module.css';
 import QuizList from './QuizList.js';
 
-const quizData = [
-  // 퀴즈 데이터 예시
-  {
-    question: 'quiz1',
-    choices: ['a', 'b', 'c', 'd', 'e'],
-    answer: 0
-  },
-];
+
 
 const Quiz = ({ onResult }) => {
   const [currentQuiz, setCurrentQuiz] = useState(0);
