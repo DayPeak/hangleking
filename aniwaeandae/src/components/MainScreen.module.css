@@ -7,12 +7,13 @@
 }
 
 .mainScreen {
-    display: flex;
+    display:flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50rem;
+    height: 80rem;
     font-family: 'GangwonEdu_OTFBoldA';
+    overflow : auto;
 }
 
 @media (min-width: 390px) {

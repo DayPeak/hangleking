@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import styles from './Quiz.module.css';
 import QuizList from './QuizList.js';
 
-
-
 const Quiz = ({ onResult }) => {
   const [currentQuiz, setCurrentQuiz] = useState(0);
   const [score, setScore] = useState(0);

@@ -29,7 +29,7 @@ const ResultPage = () => {
         <ShareTestLink onClick={handleShare} />
       </div>
       <ScoreDisplay score={score} />
-      <TestResult testResult={testResult} /> {/* testResult prop 전달 */}
+      <TestResult testResult={testResult} /> 
       <PrettyButton buttonText="결과 공유하기" onClick={handleShare} />
       <PrettyButton buttonText="테스트 다시하기" onClick={goToMainPage} />
     </MainScreen>
