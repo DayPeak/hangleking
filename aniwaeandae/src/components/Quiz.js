@@ -21,7 +21,7 @@ const Quiz = ({ onResult }) => {
     const shuffledDataO = QuizList.sort(() => Math.random() - 0.5);
     const shuffledData = shuffledDataO.slice(0, 10);
     setRandomQuiz(shuffledData);
-  }, []);
+  }, []); // 문제 랜덤 배열 만들기
 
   const handleAnswer = (answerIndex) => {
     const isCorrect = answerIndex === randomQuiz[currentQuiz].answer;
