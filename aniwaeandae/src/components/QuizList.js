@@ -1,3 +1,5 @@
+// QuizList.js
+
 const QuizList  = [
     {
         question: '내 꿈은 세종대왕이 __거야! \t 안에 들어갈 말로 올바른 것은?',
