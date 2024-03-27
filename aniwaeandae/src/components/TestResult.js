@@ -22,7 +22,7 @@ const TestResult = ({ testResult }) => {
  };
 
  return (
-    <div>
+    <div className={styles.testResultContainer}>
       {testResult ? (
         <div>
           {testResult.map((item, index) => (
@@ -32,7 +32,7 @@ const TestResult = ({ testResult }) => {
               onMouseOut={() => handleMouseOut(index)}
             >
               <p>{index+1}. {item.question}</p>
-              <p>내가 고른 답 :{item.answer} {item.isCorrect ? 'O' : 'X'}</p>
+              <p style={{ color: item.isCorrect ? 'green' : 'red' }}>내가 고른 답 :{item.answer} {item.isCorrect ? 'O' : 'X'}</p>
               <div className='explain'>{showExplanations[index] && <p>{item.explain}</p>}</div>
             </div>
           ))}
