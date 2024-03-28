@@ -34,7 +34,7 @@ const QuizList  = [
      {
         question: '이번 무대 준비 열심히 ___?',
          choices: ['했덨데', '했든데'], 
-         answer: 1, 
+         answer: 0, 
          explain : '지난 일을 나타낼 때는 \'-던\'을 붙이고 선택을 가리지 않는 뜻으로 사용할 때는 \'든\'을 붙여요.'
      },
      {

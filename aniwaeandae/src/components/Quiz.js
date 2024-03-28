@@ -17,12 +17,14 @@ const Quiz = ({ onResult }) => {
 
   const handleAnswer = (answerIndex) => {
     const isCorrect = answerIndex === randomQuiz[currentQuiz].answer;
-    setSelectedAnswers([...selectedAnswers, { question: randomQuiz[currentQuiz].question, answer: answerIndex, isCorrect }]);
+    setSelectedAnswers([...selectedAnswers, { question: randomQuiz[currentQuiz].question, answer: randomQuiz[currentQuiz].choices[answerIndex], isCorrect, explain: randomQuiz[currentQuiz].explain  }]);
+    console.log(selectedAnswers); // 반환값 확인용 로그
     if (isCorrect) {
       setScore(score + 1);
     }
     setCurrentQuiz(currentQuiz + 1);
   };
+  
 
   if (currentQuiz >= (randomQuiz.length)) {
     onResult(selectedAnswers);
