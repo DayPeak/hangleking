@@ -1,9 +1,12 @@
+// TestResult.js
 import React, { useState } from 'react';
 import styles from './TestResult.module.css';
+import Modal from './Modal'; // Modal 컴포넌트를 가져옵니다.
 
 const TestResult = ({ testResult }) => {
- // 각 문제에 대한 해설 상태를 관리하는 배열을 초기화합니다.
  const [showExplanations, setShowExplanations] = useState(new Array(testResult.length).fill(false));
+ const [modalOpen, setModalOpen] = useState(false);
+ const [currentExplanation, setCurrentExplanation] = useState('');
 
  const handleMouseOver = (index) => {
     setShowExplanations(prev => {
@@ -11,6 +14,8 @@ const TestResult = ({ testResult }) => {
       newShowExplanations[index] = true;
       return newShowExplanations;
     });
+    setCurrentExplanation(testResult[index].explain);
+    setModalOpen(true);
  };
 
  const handleMouseOut = (index) => {
@@ -19,6 +24,7 @@ const TestResult = ({ testResult }) => {
       newShowExplanations[index] = false;
       return newShowExplanations;
     });
+    setModalOpen(false);
  };
 
  return (
@@ -26,10 +32,6 @@ const TestResult = ({ testResult }) => {
       {testResult ? (
         <div>
           {testResult.map((item, index) => (
-            <div key={index}>
-              <p>{index+1}. {item.question}</p>
-              <p>내가 고른 답 :{item.answer+1} {item.isCorrect ? 'O' : 'X'}</p>
-              <p>{item.explain}</p>
             <div
               key={index}
               onMouseOver={() => handleMouseOver(index)}
@@ -37,13 +39,15 @@ const TestResult = ({ testResult }) => {
             >
               <p>{index+1}. {item.question}</p>
               <p style={{ color: item.isCorrect ? 'green' : 'red' }}>내가 고른 답 :{item.answer} {item.isCorrect ? 'O' : 'X'}</p>
-              <div className='explain'>{showExplanations[index] && <p>{item.explain}</p>}</div>
             </div>
           ))}
         </div>
       ) : (
         <p>Loading...</p>
       )}
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+        <p>{currentExplanation}</p>
+      </Modal>
     </div>
  );
 };
