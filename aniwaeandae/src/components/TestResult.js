@@ -9,10 +9,9 @@ const TestResult = ({ testResult }) => {
         <div>
           {testResult.map((item, index) => (
             <div key={index}>
-              <p>{index+1}. {item.question}
-              <p>내가 고른 답 :{item.answer} 
-              {item.isCorrect ? 'O' : 'X'}
-              <p>{item.explain}</p></p></p>
+              <p>{index+1}. {item.question}</p>
+              <p>내가 고른 답 :{item.answer+1} {item.isCorrect ? 'O' : 'X'}</p>
+              <p>{item.explain}</p>
             </div>
           ))}
         </div>
