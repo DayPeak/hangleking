@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100rem;
+    /* height: 70rem; */
     font-family: 'GangwonEdu_OTFBoldA';
     overflow : auto;
 }
