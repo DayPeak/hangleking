@@ -17,7 +17,9 @@
     z-index: 10; /* 다른 요소 위에 나타나도록 */
 }
 
-.img {
-    display: flex;
-    justify-content: center;
+img {
+   position: relative;
+   top: 5px;
+   left: 5px;
+   
 }
