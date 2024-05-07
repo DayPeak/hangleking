@@ -15,8 +15,9 @@ const ResultPage = () => {
  const { score, testResult } = location.state || {}; // 상태에서 score와 testResult 추출
 
  const handleShare = () => {
-    alert('공유 기능이 구현되지 않았습니다.');
- };
+   const message = encodeURIComponent(`테스트 결과 확인하세요! ${window.location.href}`);
+   window.open(`kakaotalk://sendurl?url=${window.location.href}&text=${message}`, '_blank');
+};
 
  const goToMainPage = () => {
     navigate('/');
